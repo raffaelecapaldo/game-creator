@@ -11,3 +11,10 @@ $primary: gold;
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/bootstrap";
+
+.card-img-top{
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+
+}
