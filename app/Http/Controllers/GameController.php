@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 
@@ -12,12 +13,13 @@ class GameController extends Controller
         return view('home');
     }
     public function characters(){
-        $characters = Character::all();
-        return view('characters.index', compact('characters'));
+        $chars = Character::all();
+        $types = Type::all();
+        return view('characters.index', compact('chars', 'types'));
     }
     public function show($id){
         $char = Character::findOrFail($id);
-
-        return view('characters.show', compact('char'));
+        $types = Type::all();
+        return view('characters.show', compact('char', 'types'));
     }
 }
