@@ -14,10 +14,10 @@
                     }
                 @endphp
                 <div class="card text-dark" style="width: 18rem;">
-                    <img src="/img/characters-profile/{{$pgtype}}.png" class="card-img-top" alt="barbarian">
+                    <img src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
                     <div class="card-body">
                         <h4 class="card-title">{{ $char->name }}</h4>
-                        <p>Class: <span class="mb-1 fw-bold">Barbarian</span></p>
+                        <p>Class: <span class="mb-1 fw-bold">{{$pgtype}}</span></p>
 
                         <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}"
                             class="btn btn-primary">More infos</a>

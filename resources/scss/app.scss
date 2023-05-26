@@ -13,6 +13,13 @@ $primary: gold;
 @import "bootstrap/scss/bootstrap";
 
 
+/* text colors */
+.text-grey{
+    color: rgb(206, 206, 206);
+}
+
+
+/* general css */
 header{
     height: 70px;
     background-color: #B07156;
@@ -48,3 +55,4 @@ header{
     object-position: top;
 }
 }
+

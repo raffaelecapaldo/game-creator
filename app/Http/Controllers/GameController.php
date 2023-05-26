@@ -19,7 +19,7 @@ class GameController extends Controller
     }
     public function show($id){
         $char = Character::findOrFail($id);
-        $types = Type::all();
-        return view('characters.show', compact('char', 'types'));
+        $type = Type::findOrFail($char->type_id);
+        return view('characters.show', compact('char', 'type'));
     }
 }

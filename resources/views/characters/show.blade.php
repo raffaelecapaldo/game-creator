@@ -8,10 +8,10 @@
             <div class="col-12 col-lg-6 pt-5 mt-5">
                 <h1>{{$char->name}}</h1>
                 <hr>
-                <p>Class: <span class="h3 ms-3">Barbarian</span></p>
+                <p>Class: <span class="h3 ms-3 text-capitalize">{{$type->name}}</span></p>
                 <hr>
                 <div class="d-flex">
-                    <p class="">Desc: </p><p class="h5 ms-4">{{$char->description}}</p>
+                    <p class="">Desc: </p><p class="h5 ms-4 text-grey">{{$char->description}}</p>
 
                 </div>
             </div>
