@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Character;
 use Illuminate\Http\Request;
+
 
 class GameController extends Controller
 {
@@ -10,9 +12,10 @@ class GameController extends Controller
         return view('home');
     }
     public function characters(){
-        return view('characters.index');
+        $characters = Character::all();
+        return view('characters.index', compact('characters'));
     }
-    public function show(){
+    public function show($id){
         return view('characters.show');
     }
 }
