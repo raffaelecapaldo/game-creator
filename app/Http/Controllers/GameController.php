@@ -16,6 +16,8 @@ class GameController extends Controller
         return view('characters.index', compact('characters'));
     }
     public function show($id){
-        return view('characters.show');
+        $char = Character::findOrFail($id);
+
+        return view('characters.show', compact('char'));
     }
 }
