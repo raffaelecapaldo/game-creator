@@ -12,6 +12,7 @@ $primary: gold;
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/bootstrap";
 
+
 header{
     height: 70px;
     background-color: #B07156;
@@ -42,4 +43,8 @@ header{
         border-radius: 10px;
         color: white;
     }
+  .card-img-top{
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
 }
