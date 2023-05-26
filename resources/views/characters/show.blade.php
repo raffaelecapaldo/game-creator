@@ -3,7 +3,7 @@
     <div class="container text-white">
         <div class="row py-5">
             <div class="col-12 col-lg-6 d-flex justify-content-center">
-                <img class="" src="/img/characters/barbarian.png" alt="barbarian">
+                <img class="" src="/img/characters/{{$type->name}}.png" alt="barbarian">
             </div>
             <div class="col-12 col-lg-6 pt-5 mt-5">
                 <h1>{{ $char->name }}</h1>
