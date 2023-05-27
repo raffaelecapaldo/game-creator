@@ -134,16 +134,16 @@ header{
         scale: 1.2;
     }
     &:hover .atk{
-        color: yellow;
+        color: #d6ae64;
     }
     &:hover .def{
         color: lightskyblue;
     }
     &:hover .vel{
-        color: lightgreen;
+        color: rgb(98, 163, 98);
     }
     &:hover .health{
-        color: red;
+        color: #973031;
     }
 
     .card-img-top{
@@ -233,16 +233,16 @@ header{
         padding-left: 5px;
     }
     .atk{
-        color: yellow;
+        color: #d6ae64;
     }
     .def{
         color: lightskyblue;
     }
     .vel{
-        color: lightgreen;
+        color:rgb(98, 163, 98);
     }
     .health{
-        color: red;
+        color: #973031;
     }
 }
 
