@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6 ps-5 pt-3 d-flex flex-column">
-                <h1 class="text-uppercase fw-semibold">{{ $char->name }}</h1>
+                <h1 class="text-uppercase fw-semibold" id="char-name">{{ $char->name }}</h1>
                 <hr>
                 <p><span class="fw-semibold">Type:</span> <span class="ms-3 text-capitalize">{{ $type->name }}</span></p>
                 <hr>
