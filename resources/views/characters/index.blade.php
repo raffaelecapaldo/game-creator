@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container text-white">
+    <div class="container text-white" id="characters-index">
         <div class="pg-list p-5 d-flex justify-content-center flex-wrap gap-4">
             @foreach ($chars as $char)
                 @php
@@ -13,16 +13,23 @@
                         }
                     }
                 @endphp
-                <div class="card" style="width: 16rem;">
-                    <img src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
-                    <div class="card-body">
-                        <h6 class="card-title">{{ $char->name }}</h6>
-                        <p>Class: <span class="mb-1 fw-bold">{{$pgtype}}</span></p>
-
-                        <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}"
-                            class="btn btn-primary">More infos</a>
+                <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}" class="text-white text-decoration-none">
+                    <div class="card" style="width: 16rem;">
+                        <div class="card img">
+                            <img src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">{{ $char->name }}</h6>
+                            <p>Class: <span class="mb-1 fw-semibold">{{$pgtype}}</span></p>
+                            <div class="stats d-flex gap-3">
+                                <i class="fa-solid fa-dumbbell"><span>{{ $char->attack }}</span></i>
+                                <i class="fa-solid fa-shield-halved"><span>{{ $char->defence }}</span></i>
+                                <i class="fa-solid fa-person-running"><span>{{ $char->speed }}</span></i>
+                                <i class="fa-solid fa-heart"><span>{{ $char->life }}</span></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
