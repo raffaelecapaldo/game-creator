@@ -17,9 +17,6 @@
 
 <body>
     @include('partials.header')
-    {{-- <div class="top-bg-img">
-        <img src="/img/template/magic.png" alt="">
-    </div> --}}
     <main>
         @yield('content')
     </main>
