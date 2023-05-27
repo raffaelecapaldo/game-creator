@@ -121,6 +121,19 @@ header{
     &:hover .card-img-top{
         scale: 1.2;
     }
+    &:hover .atk{
+        color: yellow;
+    }
+    &:hover .def{
+        color: lightskyblue;
+    }
+    &:hover .vel{
+        color: lightgreen;
+    }
+    &:hover .health{
+        color: red;
+    }
+
     .card-img-top{
         height: 250px;
         object-fit: cover;

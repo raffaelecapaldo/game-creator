@@ -22,10 +22,10 @@
                             <h6 class="card-title fw-bold">{{ $char->name }}</h6>
                             <p>Class: <span class="mb-1 fw-semibold">{{$pgtype}}</span></p>
                             <div class="stats d-flex gap-3">
-                                <i class="fa-solid fa-dumbbell"><span>{{ $char->attack }}</span></i>
-                                <i class="fa-solid fa-shield-halved"><span>{{ $char->defence }}</span></i>
-                                <i class="fa-solid fa-person-running"><span>{{ $char->speed }}</span></i>
-                                <i class="fa-solid fa-heart"><span>{{ $char->life }}</span></i>
+                                <i class="fa-solid fa-dumbbell atk"><span>{{ $char->attack }}</span></i>
+                                <i class="fa-solid fa-shield-halved def"><span>{{ $char->defence }}</span></i>
+                                <i class="fa-solid fa-person-running vel"><span>{{ $char->speed }}</span></i>
+                                <i class="fa-solid fa-heart health"><span>{{ $char->life }}</span></i>
                             </div>
                         </div>
                     </div>
