@@ -3,9 +3,12 @@
     <div class="container text-white">
         <div class="row py-5">
             <div class="col-12 col-lg-6 d-flex justify-content-center">
-                <img class="" src="/img/characters/{{$type->name}}.png" alt="barbarian">
+                <div class="box-char">
+                    <img class="char" src="/img/characters/{{$type->name}}.png" alt="barbarian">
+                    <div class="light-on"></div>
+                </div>
             </div>
-            <div class="col-12 col-lg-6 pt-5 mt-5">
+            <div class="col-12 col-lg-6 ps-5 pt-5 mt-5">
                 <h1>{{ $char->name }}</h1>
                 <hr>
                 <p>Class: <span class="h3 ms-3 text-capitalize">{{ $type->name }}</span></p>
