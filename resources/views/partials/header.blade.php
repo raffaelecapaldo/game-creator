@@ -13,7 +13,6 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="border-fx"></div>
         <div class="box-search">
             <i class="fa-solid fa-magnifying-glass pe-1"></i>
             <input name="search" type="search" placeholder="Search your characters">

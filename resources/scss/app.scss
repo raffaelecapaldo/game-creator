@@ -34,6 +34,7 @@ $primary: gold;
 body{
     overflow-x: hidden;
     background-color: black;
+
 }
 .top-bg-img{
     width: 650px;
@@ -66,6 +67,7 @@ header{
     color: black;
     font-weight: 600;
     margin-top: -5px;
+    transition: 1.5s;
     .box-logo{
         width: 120px;
         height: 70px;
@@ -78,25 +80,16 @@ header{
         background-color: #722a2b;
         position: relative;
         padding: 0 50px;
-        transform: skewX(-30deg);
         margin-top: -5px;
         transition: background-color 0.2s;
         z-index: 2;
-    }
-    nav:hover .border-fx{
-        background-color: #ffffff80;
-        pointer-events: none;
-    }
-    .border-fx{
-        position: absolute;
-        top:0px;
-        left: 34%;
-        width: 540px;
-        height: 65px;
-        transform: skewX(-30deg);
-        background-color: #ffffff34;
-        z-index: 1;
-        box-shadow: rgb(77, 70, 38) 0px 0px 30px 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: rgba(255, 255, 255, 0.15) 0px 15px 25px, rgba(255, 255, 255, 0.05) 0px 5px 10px;
+        transition: all 1.5s;
+        &:hover{
+            box-shadow: rgba(255, 255, 255, 0.418) 0px 5px 10px, rgba(255, 255, 255, 0.233) 0px 5px 5px;
+        }
     }
     li{
         a{
@@ -139,14 +132,18 @@ header{
         object-fit: cover;
         object-position: top;
         overflow: hidden;
-        transition: scale 0.5s;
+        transition: scale 1s;
     }
     .stats span{
         padding-left: 5px;
         font-size: 0.7rem;
+        transition: color 0.5s;
     }
 }
 #characters-index{
+    #box-index{
+        transition: 1.5s;
+    }
     a{
         box-shadow: rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
     }

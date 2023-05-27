@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container text-white" id="characters-index">
-        <div class="pg-list p-5 d-flex justify-content-center flex-wrap gap-4">
+        <div class="pg-list p-5 d-flex justify-content-center flex-wrap gap-4" id="box-index">
             @foreach ($chars as $char)
                 @php
                     /* $pgtype = array_filter($types, function($type, $char) {
