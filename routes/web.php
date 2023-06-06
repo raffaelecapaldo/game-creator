@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CharactersController;
+use App\Http\Controllers\Admin\CharactersController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +40,7 @@ Route::middleware(['auth', 'verified'])
     });
 
     Route::get('/admin', function () {
-        return redirect('/admin/characters');
+        return view('dashboard');
     });
 
 require __DIR__ . '/auth.php';

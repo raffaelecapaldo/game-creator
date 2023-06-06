@@ -67,15 +67,13 @@ header {
             object-fit: cover;
         }
         cursor: pointer;
-        &:hover img {
-        }
     }
 }
 /* -----flipping cards */
 
 .flip-card {
     width: 18rem;
-    height: 25rem;
+    height: 25.8rem;
     perspective: 1000px;
     &:hover h3{
         animation: popin 1s 1s ease-in-out, blink 2s 2s ease-in-out infinite;

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use Illuminate\Http\Request;
 use App\Models\Character;
+use App\Http\Controllers\Controller;
 
 class CharactersController extends Controller
 {
