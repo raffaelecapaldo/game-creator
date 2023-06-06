@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container text-white">
+    <div class="container pgIndex text-white">
         <div class="pg-list p-5 d-flex flex-wrap gap-3">
             @foreach ($chars as $char)
                 @php
@@ -13,14 +13,26 @@
                         }
                     }
                 @endphp
-                <div class="card text-dark" style="width: 18rem;">
-                    <img src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ $char->name }}</h4>
-                        <p>Class: <span class="mb-1 fw-bold">{{$pgtype}}</span></p>
+                <div class="card text-dark flip-card overflow-hidden bg-dark" style="width: 18rem;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="imgwrapper overflow-hidden">
+                                <img class="front" src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
+                            </div>
+                            <div class="card-body bg-white">
+                                <h4 class="card-title">{{ $char->name }}</h4>
+                                <p>Class: <span class="fw-bold">{{$pgtype}}</span></p>
 
-                        <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}"
-                            class="btn btn-primary">More infos</a>
+                                {{-- <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}"
+                                    class="btn btn-primary">More infos</a> --}}
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <a class="position-relative" href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}">
+                                <img class="back" src="/img/characters/{{$pgtype}}.png" class="card-img-top" alt="barbarian">
+                                <h3 class="position-absolute">Click for more datails</h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
             @endforeach

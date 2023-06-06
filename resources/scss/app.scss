@@ -50,9 +50,149 @@ header {
         object-fit: cover;
         object-position: top;
     }
-    .authentication{
-        ul{
+    .authentication {
+        ul {
             list-style: none;
         }
     }
 }
+
+/* index characters */
+
+.pgIndex {
+    .card {
+        img.front {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        cursor: pointer;
+        &:hover img {
+        }
+    }
+}
+/* -----flipping cards */
+
+.flip-card {
+    width: 18rem;
+    height: 25rem;
+    perspective: 1000px;
+    &:hover h3{
+        animation: popin 1s 1s ease-in-out, blink 2s 2s ease-in-out infinite;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    h3{
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+/* SHOW CHARACTERS */
+.showChar{
+    .description{
+        max-height: 300px;
+        overflow: auto;
+        padding: 3px;
+    }
+    /* Webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 6px; /* Larghezza della scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #212529; /* Colore dello sfondo della scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #B07156; /* Colore della scrollbar */
+    border-radius: 3px; /* Raggio degli angoli */
+  }
+
+  /* Firefox */
+  ::-moz-scrollbar {
+    width: 6px;
+  }
+
+  ::-moz-scrollbar-track {
+    background-color: #212529;
+  }
+
+  ::-moz-scrollbar-thumb {
+    background-color: #B07156;
+    border-radius: 3px;
+  }
+
+  /* Edge e IE */
+  ::-ms-scrollbar {
+    width: 6px;
+  }
+
+  ::-ms-scrollbar-track {
+    background-color: #212529;
+  }
+
+  ::-ms-scrollbar-thumb {
+    background-color: #B07156;
+    border-radius: 3px;
+  }
+
+}
+
+
+
+
+/* animations */
+
+@keyframes popin {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
