@@ -7,7 +7,7 @@
             <div class="row d-flex justify-content-center mt-3 mb-2">
                 <div class="col-6">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" placeholder="Insert character name">
+                    <input type="text" name="name" class="form-control" placeholder="Insert character name">
                 </div>
 
             </div>
