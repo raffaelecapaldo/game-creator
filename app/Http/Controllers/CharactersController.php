@@ -21,16 +21,27 @@ class CharactersController extends Controller
 
     public function store(StoreCharacterRequest $request)
     {
-        //
+        $data = $request->validated();
+        $newChar = new Character();
+        $newChar->fill($data);
+        $newChar->save();
+
+        return redirect()->route('characters.show', $newChar->id);
+
     }
 
     public function update(UpdateCharacterRequest $request, Character $character)
     {
-        //
+        $data = $request->validated();
+        $character->update($data);
+
+        return redirect()->route('characters.show', $character->id);
+
     }
 
     public function destroy(Character $character)
     {
-        //
+        $character->delete();
+        return redirect()->route('characters.index');
     }
 }
