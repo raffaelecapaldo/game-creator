@@ -24,7 +24,9 @@ class UpdateCharacterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'max:200|required',
+            'description' => 'required',
+            'type_id' => 'required|integer|between:1,12'
         ];
     }
 }

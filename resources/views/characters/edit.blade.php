@@ -8,7 +8,7 @@
             <div class="row d-flex justify-content-center mt-3 mb-2">
                 <div class="col-6">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" value="{{$character->name}}" class="form-control" placeholder="Insert character name">
+                    <input name="name" type="text" value="{{$character->name}}" class="form-control" placeholder="Insert character name">
                 </div>
 
             </div>
