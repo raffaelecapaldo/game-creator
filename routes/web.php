@@ -35,13 +35,12 @@ Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
     ->group(function(){
-        Route::resource('characters', CharactersController::class)->except(['show']);
-
+        Route::resource('characters', CharactersController::class);
     });
 
-    Route::get('/admin', function () {
-        return view('dashboard');
-    });
+Route::get('/admin', function () {
+    return view('dashboard');
+});
 
 require __DIR__ . '/auth.php';
 

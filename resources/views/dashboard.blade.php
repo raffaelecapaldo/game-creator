@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('characterlink')
+{{route('admin.characters.index')}}
+@endsection
+
 
 @section('content')
 <div class="container">

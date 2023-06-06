@@ -45,3 +45,7 @@
 
     </div>
 @endsection
+
+@section('characterlink')
+{{route('admin.characters.index')}}
+@endsection

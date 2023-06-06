@@ -2,6 +2,7 @@
 @section('content')
     <div class="container showChar text-white">
         <div class="row py-5">
+            @yield('buttons')
             <div class="col-12 col-lg-6 d-flex justify-content-center">
                 <img class="" src="/img/characters/{{$type->name}}.png" alt="barbarian">
             </div>
@@ -27,4 +28,7 @@
                 </div>
             </div>
         </div>
+    @endsection
+    @section('characterlink')
+    {{route('characters.index')}}
     @endsection

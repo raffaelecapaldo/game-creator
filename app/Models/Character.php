@@ -9,9 +9,10 @@ class Character extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function characters()
-    {
-        return $this->hasOne(Type::class);
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
+
 }

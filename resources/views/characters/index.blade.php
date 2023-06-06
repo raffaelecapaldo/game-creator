@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+
 @section('content')
     <div class="container pgIndex text-white">
         <div class="pg-list p-5 d-flex flex-wrap gap-3">
@@ -28,7 +30,12 @@
                             </div>
                         </div>
                         <div class="flip-card-back">
-                            <a class="position-relative" href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}">
+                            <a class="position-relative" href="@if (url()->current() == route('characters.index'))
+                                {{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}
+                                @elseif (url()->current() == route('admin.characters.index'))
+                                {{ route('admin.characters.show', $char->id) }}
+                                @endif
+                                ">
                                 <img class="back" src="/img/characters/{{$pgtype}}.png" class="card-img-top" alt="barbarian">
                                 <h3 class="position-absolute">Click for more datails</h3>
                             </a>
@@ -38,4 +45,7 @@
             @endforeach
         </div>
     </div>
+@endsection
+
+@section('showlink')
 @endsection

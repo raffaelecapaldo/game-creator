@@ -5,7 +5,7 @@
         </div>
         <ul class="d-flex justify-content-center align-items-center list-unstyled gap-4 pt-3">
             <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('characters.index')}}">Characters</a></li>
+            <li><a href="@yield('characterlink')">Characters</a></li>
             <li><a href="#">Rules</a></li>
             <li><a href="#">Team</a></li>
             <li><a href="#">Blog</a></li>

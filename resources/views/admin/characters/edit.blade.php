@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container text-white">
-        <h2 class="text-center mt-2">Crea un nuovo personaggio</h2>
+        <h2 class="text-center mt-2">Modifica il personaggio {{$character->name}}</h2>
         <form action="{{ route('admin.characters.update', $character->id) }}" method="post">
             @csrf
              @method('PUT')
@@ -71,4 +71,8 @@
         </form>
 
     </div>
+@endsection
+
+@section('characterlink')
+{{route('admin.characters.index')}}
 @endsection
