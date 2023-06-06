@@ -21,7 +21,9 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <div class="dash-buttons">
+                        <button class="btn btn-primary"><a href="{{route('admin.characters.create')}}">Crea un nuovo personaggio</a></button>
+                    </div>
                 </div>
             </div>
         </div>

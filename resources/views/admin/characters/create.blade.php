@@ -16,9 +16,7 @@
                     <label for="type_id" class="form-label">Choose your class</label>
                     <select name="type_id" class="form-select">
                         @foreach ($types as $type)
-                        <option @if ($character->type_id === $type->id)
-                            selected
-                        @endif value="{{$type->id}}">{{$type->name}}</option>
+                        <option value="{{$type->id}}">{{$type->name}}</option>
                         @endforeach
 
                     </select>
