@@ -28,3 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/', [GameController::class, 'index'] )->name('home');
+Route::get('/characters', [GameController::class, 'characters'] )->name('characters.index');
+Route::get('/characters/{id}', [GameController::class, 'show'] )->name('characters.show');
