@@ -19,12 +19,14 @@ class CharactersController extends Controller
 
     public function create()
     {
-        return view('admin.characters.create');
+        $types = Type::all();
+        return view('admin.characters.create', compact('types'));
     }
 
     public function edit(Character $character)
     {
-        return view('admin.characters.edit', compact('character'));
+        $types = Type::all();
+        return view('admin.characters.edit', compact('character', 'types'));
     }
 
     public function show(Character $character){

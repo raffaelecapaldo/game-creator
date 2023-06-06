@@ -15,18 +15,12 @@
                 <div class="col-6">
                     <label for="type_id" class="form-label">Choose your class</label>
                     <select name="type_id" class="form-select">
-                        <option value="1">Barbarian</option>
-                        <option value="2">Bard</option>
-                        <option value="3">Cleric</option>
-                        <option value="4">Druid</option>
-                        <option value="5">Fighter</option>
-                        <option value="6">Monk</option>
-                        <option value="7">Paladin</option>
-                        <option value="8">Ranger</option>
-                        <option value="9">Rogue</option>
-                        <option value="10">Sorcerer</option>
-                        <option value="11">Warlock</option>
-                        <option value="12">Wizard</option>
+                        @foreach ($types as $type)
+                        <option @if ($character->type_id === $type->id)
+                            selected
+                        @endif value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+
                     </select>
                 </div>
 

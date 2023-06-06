@@ -16,42 +16,12 @@
                 <div class="col-6">
                     <label for="type_id" class="form-label">Choose your class</label>
                     <select name="type_id" class="form-select">
-                        <option @if ($character->type_id === 1)
+                        @foreach ($types as $type)
+                        <option @if ($character->type_id === $type->id)
                             selected
-                        @endif value="1">Barbarian</option>
-                        <option @if ($character->type_id === 2)
-                            selected
-                            @endif value="2">Bard</option>
-                        <option @if ($character->type_id === 3)
-                            selected
-                            @endif value="3">Cleric</option>
-                        <option @if ($character->type_id === 4)
-                            selected
-                            @endif value="4">Druid</option>
-                        <option @if ($character->type_id === 5)
-                            selected
-                            @endif value="5">Fighter</option>
-                        <option @if ($character->type_id === 6)
-                            selected
-                            @endif value="6">Monk</option>
-                        <option @if ($character->type_id === 7)
-                            selected
-                            @endif value="7">Paladin</option>
-                        <option @if ($character->type_id === 8)
-                            selected
-                            @endif value="8">Ranger</option>
-                        <option @if ($character->type_id === 9)
-                            selected
-                            @endif value="9">Rogue</option>
-                        <option @if ($character->type_id === 10)
-                            selected
-                            @endif value="10">Sorcerer</option>
-                        <option @if ($character->type_id === 11)
-                            selected
-                            @endif value="11">Warlock</option>
-                        <option @if ($character->type_id === 12)
-                            selected
-                            @endif value="12">Wizard</option>
+                        @endif value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+
                     </select>
                 </div>
 
