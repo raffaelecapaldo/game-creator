@@ -9,6 +9,10 @@ use App\Models\Character;
 
 class CharactersController extends Controller
 {
+    public function index() {
+       // return view('characters.index');
+    }
+
     public function create()
     {
         return view('characters.create');
@@ -23,6 +27,10 @@ class CharactersController extends Controller
     {
         $data = $request->validated();
         $newChar = new Character();
+        $newChar->attack = random_int(0, 100);
+        $newChar->defence = random_int(0, 100);
+        $newChar->speed = random_int(0, 100);
+        $newChar->life = random_int(0, 100);
         $newChar->fill($data);
         $newChar->save();
 
