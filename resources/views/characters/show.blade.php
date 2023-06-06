@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container text-white">
+    <div class="container showChar text-white">
         <div class="row py-5">
             <div class="col-12 col-lg-6 d-flex justify-content-center">
                 <img class="" src="/img/characters/{{$type->name}}.png" alt="barbarian">
@@ -12,7 +12,7 @@
                 <hr>
                 <div class="d-flex">
                     <p class="">Desc: </p>
-                    <p class="h5 ms-4 text-grey">{{ $char->description }}</p>
+                    <p class="h5 ms-4 text-grey description">{{ $type->description }}</p>
 
 
 
