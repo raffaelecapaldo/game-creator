@@ -1,30 +1,26 @@
-@extends('layouts.app')
-@section('content')
-    <div class="container text-white">
-        <div class="row py-5">
-            <div class="col-12 col-lg-6 d-flex justify-content-center">
-                <img class="" src="/img/characters/{{$type->name}}.png" alt="barbarian">
-            </div>
-            <div class="col-12 col-lg-6 pt-5 mt-5">
-                <h1>{{ $char->name }}</h1>
-                <hr>
-                <p>Class: <span class="h3 ms-3 text-capitalize">{{ $type->name }}</span></p>
-                <hr>
-                <div class="d-flex">
-                    <p class="">Desc: </p>
-                    <p class="h5 ms-4 text-grey">{{ $char->description }}</p>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Nuovo progetto</title>
+
+    <!-- Styles -->
+    @vite('resources/js/app.js')
+
+</head>
 
 
+<body class=" bg-dark">
+    @include('partials.header')
+    <main>
+        @yield('content')
+    </main>
+    @include('partials.footer')
+</body>
 
-                </div>
-                {{-- giusto per usare i dati dell'esercizio --}}
-                <div class="stats">
-                    <h3>Stats</h3>
-                    <p>Attack: {{ $char->attack }}</p>
-                    <p>Defence: {{ $char->defence }}</p>
-                    <p>Speed: {{ $char->speed }}</p>
-                    <p>Life: {{ $char->life }}</p>
-                </div>
-            </div>
-        </div>
-    @endsection
+</html>
