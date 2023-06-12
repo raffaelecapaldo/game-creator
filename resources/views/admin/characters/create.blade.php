@@ -23,7 +23,7 @@
                 </div>
 
             </div>
-            <div class="row d-flex justify-content-center mb-2 my-5">
+            <div class="row d-flex justify-content-center mb-2">
                 <div class="col-6">
                     <label for="items[]" class="form-label">Choose your items</label>
                     <select id="select-items" name="items[]" multiple data-placeholder="Add items">
