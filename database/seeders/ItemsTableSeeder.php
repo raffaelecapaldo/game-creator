@@ -15,20 +15,21 @@ class ItemsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        for ($i = 0; $i < 25; $i++) {
-            $newItem = new Item();
-
-            $newItem->name = $faker->word;
-            $newItem->description = $faker->sentence;
-            $newItem->slug = $faker->slug;
-            $newItem->category = $faker->word;
-            $newItem->type = $faker->word;
-            $newItem->weight = $faker->randomFloat(2, 0, 100);
-            $newItem->cost = $faker->randomNumber(4);
-
-            $newItem->save();
+        $items = getCsvData('resources\csv\weapons.csv');
+        foreach ($items as $index => $row) {
+            if ($index !== 0) {
+                $newItem = new Item();
+                $newItem->name = $row[0];
+                $newItem->slug = Str::slug($row[0], '-');
+                $newItem->type = $row[2];
+                $newItem->category = $row[3];
+                $newItem->weight = $row[4];
+                $newItem->cost = $row[5];
+                $newItem->damage_dice = $row[6];
+                $newItem->save();
+            }
         }
         //
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->enum('type', ['Weapon', 'Armor', 'Accessory'])->default('Weapon');
+            $table->enum('type', ['Weapons', 'Armor', 'Accessory'])->default('Weapons');
             $table->string('category');
             $table->string('weight', 50);
             $table->string('cost', 50);
