@@ -2,43 +2,30 @@
 
 
 @section('content')
-    <div class="container pgIndex text-white">
-        <div class="pg-list p-5 d-flex flex-wrap gap-3">
+    <div class="text-white px-5 mx-auto">
+        <div class="py-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 flex-wrap mx-auto">
             @foreach ($chars as $char)
                 @php
-                    /* $pgtype = array_filter($types, function($type, $char) {
-                        return $type->id == $char->type_id;
-                    }) */
                     foreach ($types as $type) {
                         if ($type->id == $char->type_id) {
                             $pgtype = $type->name;
                         }
                     }
                 @endphp
-                <div class="card text-dark flip-card overflow-hidden bg-dark" style="width: 18rem;">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="imgwrapper overflow-hidden">
-                                <img class="front" src="/img/characters-profile/{{$pgtype}}.jpg" class="card-img-top" alt="barbarian">
-                            </div>
-                            <div class="card-body bg-white">
-                                <h4 class="card-title">{{ $char->name }}</h4>
-                                <p>Class: <span class="fw-bold">{{$pgtype}}</span></p>
 
-                                {{-- <a href="{{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}"
-                                    class="btn btn-primary">More infos</a> --}}
-                            </div>
+                <div class="col p-2">
+                    <div class="flex flex-column gap-2 justify-content-center p-2 cardBackgroundIndex">
+                        <div class="overflow-hidden mb-3" style="height: 240px">
+                            <img class="object-fit-cover h-100 w-100" src="/img/characters-profile/{{ $pgtype }}.jpg"
+                                alt="barbarian">
                         </div>
-                        <div class="flip-card-back">
-                            <a class="position-relative" href="@if (url()->current() == route('characters.index'))
-                                {{ route('characters.show', ['id' => $char->id, str_replace(' ', '-', $char->name)]) }}
-                                @elseif (url()->current() == route('admin.characters.index'))
-                                {{ route('admin.characters.show', $char->id) }}
-                                @endif
-                                ">
-                                <img class="back" src="/img/characters/{{$pgtype}}.png" class="card-img-top" alt="barbarian">
-                                <h3 class="position-absolute">Click for more datails</h3>
-                            </a>
+                        <div>
+                            <h4 class="card-title">{{ $char->name }}</h4>
+                            <p class="fw-bold">{{ $pgtype }}</p>
+                        </div>
+                        <div>
+                            <a class="btn btn-primary text-uppercase fw-bold"
+                                href="{{ '/characters/' . $char->id }}">datails</a>
                         </div>
                     </div>
                 </div>

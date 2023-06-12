@@ -45,7 +45,7 @@ class TypeTableSeeder extends Seeder
             // restituisci i dati
             return $data;
         }
-        $types = getCsvData('resources\csv\classes.csv');
+        $types = getCsvData('resources/csv/classes.csv');
 
         foreach ($types as $index => $row) {
             if ($index !== 0) {
