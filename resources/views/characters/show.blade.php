@@ -2,8 +2,8 @@
 @section('content')
     <div class="container text-white">
         <div class="row py-5">
-            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                <div class="box-char">
+            <div class="col-12 col-lg-6 d-flex flex-column">
+                <div class="box-char py-5">
                     <img class="char" src="/img/characters/{{$type->name}}.png" alt="barbarian">
                     <div class="light-on"></div>
                 </div>

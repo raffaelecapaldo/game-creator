@@ -12,7 +12,8 @@ $primary: gold;
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 
 :root{
@@ -50,12 +51,10 @@ $primary: gold;
 }
 body{
     overflow-x: hidden;
-    background-color: black;
-    font-family: 'Libre Baskerville', serif;
-    font-family: 'PT Serif', serif;
+    background-color: #202020;
+    font-family: 'Anaheim', sans-serif;
     height: calc(100vh - 60px);
     overflow-y: scroll;
-    background-image: url(../../public/img/template/background-example.jpg);
     background-size: cover;
 
 }
@@ -91,6 +90,7 @@ header{
     font-weight: 600;
     margin-top: -5px;
     transition: 1.5s;
+    padding: 0 50px;
     .box-logo{
         width: 120px;
         height: 70px;
@@ -100,114 +100,197 @@ header{
         }
     }
     nav{
-        background-color: #722a2b;
-        position: relative;
-        padding: 0 50px;
-        margin-top: -5px;
-        transition: background-color 0.2s;
-        z-index: 2;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: rgba(255, 255, 255, 0.15) 0px 15px 25px, rgba(255, 255, 255, 0.05) 0px 5px 10px;
-        transition: all 1.5s;
-        &:hover{
-            box-shadow: rgba(255, 255, 255, 0.418) 0px 5px 10px, rgba(255, 255, 255, 0.233) 0px 5px 5px;
-        }
+        font-family: 'Play', sans-serif;
     }
     li{
         a{
             text-decoration: none;
-            color: #d6ae64;
+            color: #F5E6C9;
             transition: color 0.2s;
             &:hover{
             color: white;
             }
         }
-
-    }
-    input{
-        background-color: rgba(0, 0, 0, 0.267);
-        border-radius: 10px;
-        color: white;
-    }
-}
-.card{
-    background-color: transparent;
-    overflow: hidden;
-    &:hover .card-img-top{
-        scale: 1.2;
-    }
-    &:hover .atk{
-        color: #d6ae64;
-    }
-    &:hover .def{
-        color: lightskyblue;
-    }
-    &:hover .vel{
-        color: rgb(98, 163, 98);
-    }
-    &:hover .health{
-        color: #973031;
-    }
-
-    .card-img-top{
-        height: 250px;
-        object-fit: cover;
-        object-position: top;
-        overflow: hidden;
-        transition: scale 1s;
-    }
-    .stats span{
-        padding-left: 5px;
-        font-size: 0.7rem;
-        transition: color 0.5s;
-    }
-}
-#characters-index{
-    #box-index{
-        transition: 1.5s;
     }
     a{
-        box-shadow: rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
+        font-family: 'Play', sans-serif;
+        text-decoration: none;
+        color: #F5E6C9;
+        transition: color 0.2s;
+        &:hover{
+        color: white;
+        }
     }
 }
-.box-char{
-    position: relative;
-    .char{
-        width: 100%;
-        z-index: 3;
-        transition: all 2s;
-        cursor: pointer;
-        // &:hover {
-        //     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.603) 0%, rgb(0, 0, 0) 70%);
-        //     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-        //     scale: 1.1;
-        // }
-    }
-        // .light-on {
-        //     position: absolute;
-        //     top: 50%;
-        //     left: 50%;
-        //     transform: translate(-50%, -50%);
-        //     width: 800px;
-        //     height: 800px;
-        //     background-color: transparent;
-        //     z-index: -1;
-        //   }
 
-        //   .light-on::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: 50%;
-        //     left: 50%;
-        //     width: 800px;
-        //     height: 800px;
-        //     border-radius: 50%;
-        //     transform: translate(-50%, -50%);
-        //     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.301) 0%, rgb(0, 0, 0) 70%);
-        //     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-        //   }
+
+// HOMEPAGE
+.homepage{
+    padding: 0 50px;
 }
+.hero{
+    height: 100vh;
+    .slogan{
+        max-width: 200px;
+        .title-hero {
+            /* WAR PRIME */
+        font-family: 'Play';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 24px;
+        height: 100px;
+        /* or 50% */
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.38em;
+
+        background: linear-gradient(90.02deg, rgba(248, 214, 127, 0) -4.78%, #F8D67F 48.47%, rgba(248, 214, 127, 0) 106.34%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        }
+        p{
+
+            width: 642px;
+            height: 144px;
+
+            font-family: 'Play';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+            /* or 160% */
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.38em;
+
+            color: #FFFFFF;
+
+
+            /* Inside auto layout */
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+
+        }
+        button{
+            /* Button Play Now */
+
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 57px;
+        gap: 10px;
+
+        border: 1px solid #F8D67F;
+        background-color: transparent;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+
+
+        /* PLAY now */
+        font-family: 'Play';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 24px;
+        /* identical to box height, or 160% */
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.38em;
+        text-transform: uppercase;
+
+        color: #FFFEFE;
+
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        }
+    }
+}
+
+
+
+.pgIndex {
+    .card {
+        img.front {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        cursor: pointer;
+    }
+}
+/* -----flipping cards */
+
+.flip-card {
+    width: 18rem;
+    height: 25.8rem;
+    perspective: 1000px;
+    &:hover h3{
+        animation: popin 1s 1s ease-in-out, blink 2s 2s ease-in-out infinite;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    h3{
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+    .box-char{
+        width: 100%;
+        height: 80%;
+        img{
+            width: 90%;
+        }
+    }
 #char-name{
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(214,174,100,1) 100%);
