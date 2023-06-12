@@ -13,6 +13,11 @@ $primary: #F8D67F;
 @import "bootstrap/scss/bootstrap";
 @import "./partials/multipleselect.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Play:wght@400;700&display=swap');
+// FONTFAMILY
+// font-family: 'Anaheim', sans-serif;
+// font-family: 'Play', sans-serif;
+
 
 /* text colors */
 .text-grey {
@@ -25,9 +30,10 @@ a{
 /* general css */
 header {
     height: 70px;
-    background-color: #b07156;
-    color: black;
+    padding: 0 50px;
+    color: #F5E6C9;
     font-weight: 600;
+    font-family: 'Play', sans-serif;
     .box-logo {
         width: 120px;
         height: 70px;
@@ -39,7 +45,8 @@ header {
     li {
         a {
             text-decoration: none;
-            color: black;
+            text-transform: uppercase;
+            color: #F5E6C9;
             transition: color 0.2s;
             &:hover {
                 color: white;

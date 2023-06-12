@@ -1,9 +1,9 @@
 <header>
-    <div class="container h-100 d-flex justify-content-between align-items-center">
+    <div class="h-100 d-flex justify-content-between align-items-center">
         <div class="box-logo py-1">
             <img src="/img/logo.png" alt="">
         </div>
-        <ul class="d-flex justify-content-center align-items-center list-unstyled gap-4 pt-3">
+        <ul class="d-flex justify-content-center align-items-center list-unstyled gap-5 pt-3">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="@yield('characterlink')">Characters</a></li>
             <li><a href="#">Rules</a></li>
