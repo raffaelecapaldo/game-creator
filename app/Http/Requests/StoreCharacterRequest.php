@@ -26,7 +26,8 @@ class StoreCharacterRequest extends FormRequest
         return [
             'name' => 'max:200|required',
             'description' => 'required',
-            'type_id' => 'required|integer|between:1,12'
+            'type_id' => 'required|integer|between:1,12',
+            'items' => 'required'
         ];
     }
 }
