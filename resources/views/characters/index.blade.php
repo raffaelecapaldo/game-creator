@@ -16,7 +16,7 @@
                 <div class="col p-2">
                     <div class="flex flex-column gap-2 justify-content-center p-2 cardBackgroundIndex">
                         <div class="overflow-hidden mb-3" style="height: 240px">
-                            <img class="object-fit-cover h-100 w-100" src="/img/characters-profile/{{ $pgtype }}.jpg"
+                            <img class="characterImage h-100 w-100" src="/img/characters-profile/{{ $pgtype }}.jpg"
                                 alt="barbarian">
                         </div>
                         <div>
