@@ -1,16 +1,17 @@
 <header>
-    <div class="h-100 d-flex justify-content-between align-items-center">
+    <div class="h-100 w-100 d-flex justify-content-between align-items-center">
         <div class="box-logo py-1">
             <img src="/img/logo.png" alt="">
         </div>
-        <ul class="d-flex justify-content-center align-items-center list-unstyled gap-5 pt-3">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="@yield('characterlink')">Characters</a></li>
-            <li><a href="#">Rules</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
+        <div id="navbar">
+            <ul class="list-unstyled pt-3">
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="@yield('characterlink')">Characters</a></li>
+                <li><a href="#">Rules</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
         <div class="authentication">
             <ul class="navbar-nav d-flex flex-row gap-3 mb-0">
                 <!-- Authentication Links -->
@@ -47,5 +48,14 @@
                 @endguest
             </ul>
         </div>
+    </div>
+    {{-- HAMBURGER MENU --}}
+    <div class="dropdown">
+        <i class="fa-solid fa-bars fs-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <ul class="dropdown-menu w-100">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
     </div>
 </header>
