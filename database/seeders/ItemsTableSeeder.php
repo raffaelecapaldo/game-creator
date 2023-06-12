@@ -17,7 +17,7 @@ class ItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        $items = getCsvData('resources\csv\weapons.csv');
+        $items = getCsvData('resources/csv/weapons.csv');
         foreach ($items as $index => $row) {
             if ($index !== 0) {
                 $newItem = new Item();
