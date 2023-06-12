@@ -26,6 +26,20 @@
                 </div>
 
             </div>
+            <div class="row d-flex justify-content-center mb-2">
+                <div class="col-6">
+                    <label for="items[]" class="form-label">Choose your items</label>
+                    <select id="select-items" name="items[]" multiple data-placeholder="Add items">
+                        @foreach ($items as $item)
+                        <option
+                        {{$character->items->contains($item->id) ? 'selected': ''}}
+                         class="optionItem" value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+
+            </div>
             <div class="row d-flex justify-content-center mt-3 mb-2">
                 <div class="col-6">
                     <label for="description" class="form-label">Description</label>

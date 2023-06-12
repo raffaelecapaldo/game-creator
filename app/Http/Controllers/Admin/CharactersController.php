@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Character;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
+use App\Models\Item;
+
 
 class CharactersController extends Controller
 {
@@ -20,13 +22,16 @@ class CharactersController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.characters.create', compact('types'));
+        $items = Item::all();
+        return view('admin.characters.create', compact('types', 'items'));
     }
 
     public function edit(Character $character)
     {
         $types = Type::all();
-        return view('admin.characters.edit', compact('character', 'types'));
+        $items = Item::all();
+
+        return view('admin.characters.edit', compact('character', 'types', 'items'));
     }
 
     public function show(Character $character){
@@ -45,8 +50,8 @@ class CharactersController extends Controller
         $newChar->life = random_int(1, 100);
         $newChar->fill($data);
         $newChar->save();
-
         $newChar->items()->attach($request->items);
+
 
         return redirect()->route('admin.characters.show', $newChar->id);
 

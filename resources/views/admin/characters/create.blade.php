@@ -23,15 +23,29 @@
                 </div>
 
             </div>
+            <div class="row d-flex justify-content-center mb-2 my-5">
+                <div class="col-6">
+                    <label for="items[]" class="form-label">Choose your items</label>
+                    <select id="select-items" name="items[]" multiple data-placeholder="Add items">
+                        @foreach ($items as $item)
+                        <option
+                        {{old('items') == $item->id ? 'selected': ''}}
+                         class="optionItem" value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+
+            </div>
             <div class="row d-flex justify-content-center mt-3 mb-2">
                 <div class="col-6">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" placeholder="Insert your description" name="description" cols="30" rows="10"></textarea>
                 </div>
-
+            </div>
             <div class="buttons d-flex justify-content-center mt-3">
                 <button type="submit" class="btn btn-primary">Create</button>
-                </div>
+            </div>
 
         </form>
 
