@@ -26,6 +26,12 @@
                     <p>Speed: {{ $char->speed }}</p>
                     <p>Life: {{ $char->life }}</p>
                 </div>
+                <div class="weapons text-center">
+                    <h2>Weapons</h2>
+                    @foreach ($char->items as $item)
+                        <span class="badge rounded-pill text-bg-info">{{$item->name}}</span>
+                    @endforeach
+                </div>
             </div>
         </div>
     @endsection
