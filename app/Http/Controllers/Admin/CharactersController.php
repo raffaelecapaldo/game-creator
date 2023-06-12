@@ -46,6 +46,8 @@ class CharactersController extends Controller
         $newChar->fill($data);
         $newChar->save();
 
+        $newChar->items()->attach($request->items);
+
         return redirect()->route('admin.characters.show', $newChar->id);
 
     }
@@ -54,6 +56,8 @@ class CharactersController extends Controller
     {
         $data = $request->validated();
         $character->update($data);
+        $character->items()->sync($request->items);
+
 
         return redirect()->route('admin.characters.show', $character->id);
 
