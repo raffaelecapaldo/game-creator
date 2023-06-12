@@ -24,5 +24,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TypeTableSeeder::class,
         ]);
+
+        $this->call([
+            CharactersTableSeeder::class,
+        ]);
+
+        $this->call([
+            ItemsTableSeeder::class,
+        ]);
     }
 }

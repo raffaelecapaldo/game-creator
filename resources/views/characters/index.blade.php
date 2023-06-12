@@ -15,7 +15,7 @@
                         }
                     }
                 @endphp
-                <div class="card text-dark flip-card overflow-hidden bg-transparent" style="width: 18rem;">
+                <div class="card text-dark flip-card overflow-hidden bg-dark" style="width: 18rem;">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="imgwrapper overflow-hidden">

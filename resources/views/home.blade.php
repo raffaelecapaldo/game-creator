@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('characterlink')
+{{route('characters.index')}}
+@endsection
 @section('content')
 
     <div class="homapage h-100">

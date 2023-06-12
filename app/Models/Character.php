@@ -8,8 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Character extends Model
 {
     use HasFactory;
-    public function characters()
+    protected $guarded = ['items'];
+
+    public function type()
     {
-        return $this->hasOne(Type::class);
+        return $this->belongsTo(Type::class);
     }
+
+    public function items() {
+        return $this->belongsToMany(Item::class);
+    }
+
 }

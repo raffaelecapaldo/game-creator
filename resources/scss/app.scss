@@ -1,4 +1,5 @@
 /* BOOTSTRAP IMPORT */
+@use './partials/variables' as *;
 @import "bootstrap/scss/functions";
 
 // variables override
@@ -6,11 +7,11 @@ $primary: gold;
 
 @import "bootstrap/scss/variables";
 
-
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/bootstrap";
+@import "./partials/multipleselect.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Anaheim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
@@ -38,88 +39,188 @@ $primary: gold;
 }
 
 /* text colors */
-.text-grey{
+.text-grey {
     color: rgb(206, 206, 206);
 }
-
-
+a{
+    color: white;
+    text-decoration: none;
+}
 /* general css */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    overflow-x: hidden;
-    background-color: #202020;
-    font-family: 'Anaheim', sans-serif;
-    height: calc(100vh - 60px);
-    overflow-y: scroll;
-    background-size: cover;
-
-}
-.top-bg-img{
-    width: 650px;
-    height: 650px;
-    position: absolute;
-    top: -200px;
-    right: -150px;
-    img{
-        width: 100%;
-        height: 100%;
-        transform: rotate(45deg);
-    }
-}
-.btm-bg-img{
-    width: 650px;
-    height: 650px;
-    position: absolute;
-    top: 500px;
-    left: -150px;
-    img{
-        width: 100%;
-        height: 100%;
-        transform: rotate(-90deg);
-    }
-}
-
-// HEADER
-header{
+header {
     height: 70px;
+    background-color: #b07156;
     color: black;
     font-weight: 600;
-    margin-top: -5px;
-    transition: 1.5s;
-    padding: 0 50px;
-    .box-logo{
+    .box-logo {
         width: 120px;
         height: 70px;
-        img{
+        img {
             width: 100%;
             height: 100%;
         }
     }
-    nav{
-        font-family: 'Play', sans-serif;
-    }
-    li{
-        a{
+    li {
+        a {
             text-decoration: none;
             color: #F5E6C9;
             transition: color 0.2s;
-            &:hover{
-            color: white;
+            &:hover {
+                color: white;
             }
         }
     }
-    a{
-        font-family: 'Play', sans-serif;
-        text-decoration: none;
-        color: #F5E6C9;
-        transition: color 0.2s;
-        &:hover{
+    input {
+        background-color: rgba(0, 0, 0, 0.267);
+        border-radius: 10px;
         color: white;
         }
+
+    .card-img-top {
+        max-height: 200px;
+        object-fit: cover;
+        object-position: top;
+    }
+    .authentication {
+        ul {
+            list-style: none;
+        }
+    }
+}
+/* index characters */
+
+.pgIndex {
+    .card {
+        img.front {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        cursor: pointer;
+    }
+}
+/* -----flipping cards */
+
+.flip-card {
+    width: 18rem;
+    height: 25.8rem;
+    perspective: 1000px;
+    &:hover h3{
+        animation: popin 1s 1s ease-in-out, blink 2s 2s ease-in-out infinite;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    h3{
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+/* SHOW CHARACTERS */
+.showChar{
+    .description{
+        max-height: 300px;
+        overflow: auto;
+        padding: 3px;
+    }
+    /* Webkit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #212529;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #B07156;
+    border-radius: 3px;
+  }
+
+  /* Firefox */
+  ::-moz-scrollbar {
+    width: 6px;
+  }
+
+  ::-moz-scrollbar-track {
+    background-color: #212529;
+  }
+
+  ::-moz-scrollbar-thumb {
+    background-color: #B07156;
+    border-radius: 3px;
+  }
+
+  /* Edge e IE */
+  ::-ms-scrollbar {
+    width: 6px;
+  }
+
+  ::-ms-scrollbar-track {
+    background-color: #212529;
+  }
+
+  ::-ms-scrollbar-thumb {
+    background-color: #B07156;
+    border-radius: 3px;
+  }
+
+}
+
+
+
+
+/* animations */
+
+@keyframes popin {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .3;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
