@@ -39,10 +39,10 @@ class CharactersController extends Controller
     {
         $data = $request->validated();
         $newChar = new Character();
-        $newChar->attack = random_int(0, 100);
-        $newChar->defence = random_int(0, 100);
-        $newChar->speed = random_int(0, 100);
-        $newChar->life = random_int(0, 100);
+        $newChar->attack = random_int(1, 100);
+        $newChar->defence = random_int(1, 100);
+        $newChar->speed = random_int(1, 100);
+        $newChar->life = random_int(1, 100);
         $newChar->fill($data);
         $newChar->save();
 
