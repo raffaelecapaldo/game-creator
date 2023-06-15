@@ -29,6 +29,14 @@ class CharactersTableSeeder extends Seeder
             $newCharacter->type_id = $faker->numberBetween(1,12);
 
             $newCharacter->save();
+
+            $rand1 = rand(1,25);
+            $rand2 = rand(1,25);
+            while ($rand1 === $rand2) {
+                $rand2 = rand(1,25);
+            }
+            $newCharacter->items()->attach([$rand1, $rand2]);
+
         }
         //
     }
