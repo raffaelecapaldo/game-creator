@@ -27,4 +27,19 @@ class CharactersController extends Controller
             ]);
         }
     }
-}
+
+    public function show($id) {
+        $character = Character::where('id', $id)->with(['type', 'items'])->first();
+        if (!$character) {
+            return response()->json([
+                'success' => false,
+                'results' => 'Project not found'
+            ]);
+    }
+    else {
+        return response()->json([
+            'success' => true,
+            'results' => $character
+        ]);
+    }
+}}
