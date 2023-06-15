@@ -15,8 +15,7 @@ class CharactersController extends Controller
         $characters = Character::latest()->with(['type'])->paginate($quantity);
         }
         else {
-            $characters = Character::all();
-
+            $characters = Character::with(['type'])->get();
         }
 
         if (!$characters) {
