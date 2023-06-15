@@ -10,20 +10,32 @@ class CharactersController extends Controller
 {
     public function index(Request $request)
     {
-        $quantity = $request->input('quantity', 5);
+        $quantity = $request->input('quantity');
+        if ($quantity) {
         $characters = Character::latest()->with(['type'])->paginate($quantity);
+        }
+        else {
+            $characters = Character::all();
+
+        }
 
         if (!$characters) {
             return response()->json([
                 'success' => false,
-                'results' => 'Characters not found'
-            ]);
+                'results' => 'Characters not found',
+                'status' => 'not-found'
+            ], 404);
         } else {
+
+            if ($quantity) {
             $characters->appends(['quantity' => $quantity]);
+            }
 
             return response()->json([
                 'success' => true,
-                'results' => $characters
+                'results' => $characters,
+                'status' => 'ok'
+
             ]);
         }
     }
@@ -33,13 +45,16 @@ class CharactersController extends Controller
         if (!$character) {
             return response()->json([
                 'success' => false,
-                'results' => 'Project not found'
-            ]);
+                'results' => 'Character not found',
+                'status' => 'not-found'
+            ], 404);
     }
     else {
         return response()->json([
             'success' => true,
-            'results' => $character
+            'results' => $character,
+            'status' => 'ok'
+
         ]);
     }
 }}
