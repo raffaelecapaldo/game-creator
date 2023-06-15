@@ -26,11 +26,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            CharactersTableSeeder::class,
+            ItemsTableSeeder::class,
         ]);
 
         $this->call([
-            ItemsTableSeeder::class,
+            CharactersTableSeeder::class,
         ]);
     }
 }
