@@ -23,6 +23,11 @@
 
                     <div class="dash-buttons">
                         <button class="btn btn-primary"><a href="{{route('admin.characters.create')}}">Crea un nuovo personaggio</a></button>
+                        <form class="mt-2" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+
                     </div>
                 </div>
             </div>

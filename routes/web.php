@@ -26,9 +26,9 @@ Route::get('/', function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 }); */
 
-Route::get('/', [GameController::class, 'index'] )->name('home');
+/* Route::get('/', [GameController::class, 'index'] )->name('home');
 Route::get('/characters', [GameController::class, 'characters'] )->name('characters.index');
-Route::get('/characters/{id}', [GameController::class, 'show'] )->name('characters.show');
+Route::get('/characters/{id}', [GameController::class, 'show'] )->name('characters.show'); */
 
 
 Route::middleware(['auth', 'verified'])
