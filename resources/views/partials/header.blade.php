@@ -5,9 +5,9 @@
         </div>
         <div id="navbar">
             <ul class="list-unstyled pt-3">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="@yield('characterlink')">Characters</a></li>
-                <li><a href="#">Rules</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Control panel</a></li>
+                <li><a href="{{route('admin.characters.index')}}">Edit Characters</a></li>
                 <li><a href="#">Team</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
