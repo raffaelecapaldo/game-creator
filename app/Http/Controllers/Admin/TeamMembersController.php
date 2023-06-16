@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
 use App\Models\TeamMembers;
 use App\Http\Requests\StoreTeamMembersRequest;
 use App\Http\Requests\UpdateTeamMembersRequest;
+use App\Http\Controllers\Controller;
+
 
 class TeamMembersController extends Controller
 {
@@ -15,7 +16,8 @@ class TeamMembersController extends Controller
      */
     public function index()
     {
-        //
+        $members = TeamMembers::all();
+        return view('admin.team_members.index', compact('members'));
     }
 
     /**
