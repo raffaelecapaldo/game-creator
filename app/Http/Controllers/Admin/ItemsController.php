@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Http\Requests\StoreItemRequest;
+use App\Http\Requests\UpdateItemRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Item;
 use Illuminate\Http\Request;
