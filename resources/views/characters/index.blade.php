@@ -23,15 +23,22 @@
                             <h4 class="card-title">{{ $char->name }}</h4>
                             <p class="fw-bold">{{ $pgtype }}</p>
                         </div>
-                        <div>
-                            <a class="btn btn-primary text-uppercase fw-bold"
-                                href="{{ '/characters/' . $char->id }}">datails</a>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a class="btn btn-primary text-uppercase fw-bold" href="{{ '/characters/' . $char->id }}">dettagli</a>
+                            <a class="btn btn-primary text-uppercase fw-bold" href="{{ route('admin.characters.edit', $char->id) }}">modifica</a>
+                            <form action="{{ route('admin.characters.destroy', $char->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type='submit' class="delete-button btn btn-danger text-uppercase fw-bold"
+                                    data-item-title="{{ $char->name }}">elimina</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+    @include('partials.modal-delete')
 @endsection
 
 @section('showlink')
