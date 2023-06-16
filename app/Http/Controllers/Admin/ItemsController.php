@@ -36,7 +36,13 @@ class ItemsController extends Controller
         return redirect()->route('admin.items.show', $newitem->slug);
     }
 
+    public function update(UpdateItemRequest $request, Item $item)
+    {
+        $data = $request->validated();
+        $item->update($data);
 
+        return redirect()->route('admin.items.show', $item->slug);
+    }
 
     public function destroy(Item $item)
     {
