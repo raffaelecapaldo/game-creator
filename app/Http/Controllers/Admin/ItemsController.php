@@ -26,7 +26,15 @@ class ItemsController extends Controller
         return view('admin.items.show', compact('item'));
     }
 
+    public function store(StoreItemRequest $request)
+    {
+        $data = $request->validated();
+        $newitem = new Item();
+        $newitem->fill($data);
+        $newitem->save();
 
+        return redirect()->route('admin.items.show', $newitem->slug);
+    }
 
 
 
