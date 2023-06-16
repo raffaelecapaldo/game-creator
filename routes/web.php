@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CharactersController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\Admin\TeamMembersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,8 @@ Route::middleware(['auth', 'verified'])
     ->prefix('admin')
     ->group(function(){
         Route::resource('characters', CharactersController::class);
+        Route::resource('team_members', TeamMembersController::class)->except('show');
+
     });
 
 Route::get('/admin', function () {

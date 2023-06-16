@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CharactersController;
+use App\Http\Controllers\Api\TeamMembersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::resource('characters', CharactersController::class)->parameters(['characters' => 'character:slug'])->only(['index', 'show']);
+Route::resource('team_members', TeamMembersController::class)->only(['index']);
+

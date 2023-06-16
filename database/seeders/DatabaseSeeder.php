@@ -32,5 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CharactersTableSeeder::class,
         ]);
+        $this->call([
+            TeamMembersSeeder::class,
+        ]);
     }
 }

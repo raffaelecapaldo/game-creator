@@ -8,7 +8,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/admin">Control panel</a></li>
                 <li><a href="{{route('admin.characters.index')}}">Edit Characters</a></li>
-                <li><a href="#">Team</a></li>
+                <li><a href="{{route('admin.team_members.index')}}">Team</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
