@@ -25,4 +25,14 @@ class ItemsController extends Controller
     public function show(Item $item){
         return view('admin.items.show', compact('item'));
     }
+
+
+
+
+
+    public function destroy(Item $item)
+    {
+        $item->delete();
+        return redirect()->route('admin.items.index')->with('message', "$item->name eliminato correttamente.");
+    }
 }
