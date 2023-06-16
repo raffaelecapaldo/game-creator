@@ -9,6 +9,8 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function characters() {
         return $this->belongsToMany(Character::class);
     }
