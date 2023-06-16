@@ -16,4 +16,9 @@ class ItemsController extends Controller
     {
         return view('admin.items.create');
     }
+
+    public function edit(Item $item)
+    {
+        return view('admin.items.edit', compact('item'));
+    }
 }
